@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wait Wait 😂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  background:black;
+  color:white;
+  overflow:hidden;
+  font-family:'Poppins', sans-serif;
+}
+
+.container{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  animation:fadeIn 2s ease-in-out;
+}
+
+h1{
+  font-family:'Great Vibes', cursive;
+  font-size:70px;
+  color:#ff4d6d;
+  text-shadow:0 0 25px #ff4d6d;
+}
+
+p{
+  font-size:24px;
+  margin-top:30px;
+  line-height:1.6;
+}
+
+button{
+  margin-top:30px;
+  padding:15px 40px;
+  font-size:18px;
+  border:none;
+  border-radius:40px;
+  background:#ff4d6d;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px #ff4d6d;
+}
+
+#noBtn{
+  position:relative;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>But Wait 😂</h1>
+
+  <p>
+    Before we continue…<br><br>
+    Who usually starts the fight? 👀
+  </p>
+
+  <button onclick="location.href='page5.html'">
+    Okay Fine… It’s Me 😌
+  </button>
+
+  <button id="noBtn">
+    It’s You 😏
+  </button>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * 300 - 150;
+  const y = Math.random() * 200 - 100;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
+</script>
+
+</body>
+</html>
