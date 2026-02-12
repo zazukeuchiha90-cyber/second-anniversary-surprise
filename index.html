@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2 Years With You ❤️</title>
+
+<style>
+body{
+  margin:0;
+  background:black;
+  color:white;
+  font-family:Arial, sans-serif;
+  text-align:center;
+  overflow:hidden;
+}
+
+.container{
+  margin-top:100px;
+  padding:20px;
+}
+
+button{
+  padding:12px 25px;
+  font-size:16px;
+  border:none;
+  border-radius:8px;
+  background:#ff4d6d;
+  color:white;
+  cursor:pointer;
+  margin-top:20px;
+}
+
+.hidden{
+  display:none;
+}
+
+.message{
+  margin-top:30px;
+  font-size:20px;
+  line-height:1.6;
+  max-width:90%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* floating hearts */
+.heart{
+  position:fixed;
+  bottom:-10px;
+  font-size:20px;
+  color:#ff4d6d;
+  animation:floatUp 5s linear infinite;
+}
+
+@keyframes floatUp{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-100vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Hey Sellam ❤️</h2>
+
+<button onclick="step1()">Tap To Unlock Our 2 Years</button>
+
+<div id="msg1" class="hidden message">
+  Two years ago, something beautiful started...
+</div>
+
+<button id="btn2" class="hidden" onclick="step2()">Continue</button>
+
+<div id="msg2" class="hidden message">
+  From strangers… to best friends… to soulmates.
+</div>
+
+<button id="btn3" class="hidden" onclick="step3()">Keep Going</button>
+
+<div id="msg3" class="hidden message">
+  Every fight made us stronger.<br>
+  Every hug made me feel safe.<br>
+  Every smile of yours healed me.
+</div>
+
+<button id="btn4" class="hidden" onclick="finalStep()">Final Surprise ❤️</button>
+
+<div id="finalMsg" class="hidden message" style="font-size:26px;color:#ff4d6d;">
+  Happy 2 Year Anniversary My Love 💍🌹<br><br>
+  I choose you. Today. Tomorrow. Always.
+</div>
+
+</div>
+
+<script>
+
+function step1(){
+  document.getElementById("msg1").style.display="block";
+  document.getElementById("btn2").style.display="inline-block";
+}
+
+function step2(){
+  document.getElementById("msg2").style.display="block";
+  document.getElementById("btn3").style.display="inline-block";
+}
+
+function step3(){
+  document.getElementById("msg3").style.display="block";
+  document.getElementById("btn4").style.display="inline-block";
+}
+
+function finalStep(){
+  document.getElementById("finalMsg").style.display="block";
+}
+
+/* floating hearts */
+function createHeart(){
+  const heart=document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  document.body.appendChild(heart);
+  setTimeout(()=>{heart.remove();},5000);
+}
+setInterval(createHeart,400);
+
+</script>
+
+</body>
+  </html>
