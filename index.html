@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Our 2 Years ❤️</title>
+<title>Our Story ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
   background:black;
   color:white;
-  font-family:Arial, sans-serif;
   text-align:center;
   overflow:hidden;
+  font-family:'Poppins', sans-serif;
 }
 
 .container{
-  margin-top:80px;
-  padding:20px;
+  margin-top:120px;
+  animation:fadeIn 2s ease-in-out;
+}
+
+h1{
+  font-family:'Great Vibes', cursive;
+  font-size:50px;
+  color:#ff4d6d;
+  text-shadow:0 0 15px #ff4d6d;
+}
+
+p{
+  font-size:20px;
+  margin-top:20px;
 }
 
 button{
-  padding:12px 25px;
+  margin-top:40px;
+  padding:12px 30px;
   font-size:16px;
   border:none;
-  border-radius:8px;
+  border-radius:30px;
   background:#ff4d6d;
   color:white;
   cursor:pointer;
-  margin-top:20px;
+  transition:0.3s;
 }
 
-.hidden{ display:none; }
-
-.message{
-  margin-top:30px;
-  font-size:18px;
-  line-height:1.7;
-  max-width:90%;
-  margin-left:auto;
-  margin-right:auto;
-  white-space:pre-line;
-}
-
-#photo{
-  width:230px;
-  border-radius:15px;
-  margin-top:20px;
+button:hover{
+  transform:scale(1.1);
   box-shadow:0 0 20px #ff4d6d;
+}
+
+.highlight{
+  font-weight:600;
+  color:#ff4d6d;
+}
+
+/* Fade animation */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
 /* Floating hearts */
@@ -54,7 +66,7 @@ button{
   bottom:-10px;
   font-size:20px;
   color:#ff4d6d;
-  animation:floatUp 5s linear infinite;
+  animation:floatUp 6s linear infinite;
 }
 
 @keyframes floatUp{
@@ -67,139 +79,25 @@ button{
 <body>
 
 <div class="container">
+  <h1>Hey My Sellam ❤️</h1>
+  <p>Do you remember the day our <span class="highlight">story</span> began?</p>
 
-<h2>Hey My Sellam ❤️</h2>
-
-<button onclick="step1()">Do You Remember This? 💭</button>
-
-<div id="msg1" class="hidden message">
-January 19, 2024.
-A simple text.
-But it quietly changed my whole world.
-</div>
-
-<button id="btn2" class="hidden" onclick="step2()">There’s Something More…</button>
-
-<div id="msg2" class="hidden message">
-February 13, 2024.
-The day we chose each other.
-The day I found not just love…
-But home.
-</div>
-
-<button id="btn3" class="hidden" onclick="step3()">We Survived This, Didn’t We? ❤️</button>
-
-<div id="msg3" class="hidden message">
-Two years.
-Not perfect.
-Not easy.
-But real.
-
-We fought.
-We misunderstood.
-We almost gave up sometimes.
-But somehow…
-We always came back.
-</div>
-
-<button id="btn4" class="hidden" onclick="finalStep()">Are You Ready For The Truth? ❤️</button>
-
-<div id="finalSection" class="hidden message"></div>
-
-<img id="photo" class="hidden" src="YOUR_IMAGE_LINK_HERE">
-
-<br>
-
-<button id="foreverBtn" class="hidden" onclick="celebrate()">
-Will You Stay With Me Forever? 💍
-</button>
-
-<audio id="music" src="YOUR_MUSIC_LINK_HERE"></audio>
-
+  <button onclick="location.href='page2.html'">
+    Do You Remember This? 💭
+  </button>
 </div>
 
 <script>
-
-const finalParagraph = `Happy 2 Year Anniversary, my Sellam ❤️
-
-You became my peace when my mind was loud.
-My comfort when my heart felt heavy.
-My safe place when everything felt uncertain.
-
-Every hug from you feels like protection.
-Every smile from you feels like healing.
-Every time you stay,
-it feels like a blessing.
-
-After two years,
-I don’t love you less.
-I love you deeper.
-Calmer.
-Stronger.
-More certain.
-
-I don’t promise perfection.
-I promise effort.
-I promise loyalty.
-I promise that even when it’s hard,
-I will stay.
-
-Because I don’t want temporary.
-I want you.
-For as long as life allows.
-
-I choose you.
-Today.
-Tomorrow.
-Always. ❤️`;
-
-function step1(){
-  document.getElementById("msg1").style.display="block";
-  document.getElementById("btn2").style.display="inline-block";
-}
-
-function step2(){
-  document.getElementById("msg2").style.display="block";
-  document.getElementById("btn3").style.display="inline-block";
-}
-
-function step3(){
-  document.getElementById("msg3").style.display="block";
-  document.getElementById("btn4").style.display="inline-block";
-}
-
-function finalStep(){
-  document.getElementById("finalSection").style.display="block";
-  document.getElementById("music").play();
-  typeWriter(finalParagraph,0);
-}
-
-function typeWriter(text,i){
-  if(i < text.length){
-    document.getElementById("finalSection").innerHTML += text.charAt(i);
-    setTimeout(function(){ typeWriter(text,i+1); },35);
-  } else {
-    document.getElementById("photo").style.display="block";
-    document.getElementById("foreverBtn").style.display="inline-block";
-  }
-}
-
-function celebrate(){
-  alert("Forever with you ❤️");
-}
-
-/* Floating hearts */
 function createHeart(){
   const heart=document.createElement("div");
   heart.classList.add("heart");
   heart.innerHTML="❤️";
   heart.style.left=Math.random()*100+"vw";
   document.body.appendChild(heart);
-  setTimeout(()=>{heart.remove();},5000);
+  setTimeout(()=>{heart.remove();},6000);
 }
-setInterval(createHeart,400);
-
+setInterval(createHeart,500);
 </script>
 
 </body>
-  </html>
+</html>
