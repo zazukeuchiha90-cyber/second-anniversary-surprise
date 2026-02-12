@@ -10,43 +10,32 @@ body{
   margin:0;
   background:black;
   color:white;
-  text-align:center;
   overflow:hidden;
   font-family:'Poppins', sans-serif;
 }
 
+/* Center Everything Perfectly */
 .container{
-  margin-top:120px;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
   animation:fadeIn 2s ease-in-out;
 }
 
 h1{
   font-family:'Great Vibes', cursive;
-  font-size:50px;
+  font-size:80px;
   color:#ff4d6d;
-  text-shadow:0 0 15px #ff4d6d;
+  text-shadow:0 0 25px #ff4d6d;
+  margin:0;
 }
 
 p{
-  font-size:20px;
-  margin-top:20px;
-}
-
-button{
-  margin-top:40px;
-  padding:12px 30px;
-  font-size:16px;
-  border:none;
-  border-radius:30px;
-  background:#ff4d6d;
-  color:white;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-button:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 20px #ff4d6d;
+  font-size:24px;
+  margin-top:25px;
 }
 
 .highlight{
@@ -54,19 +43,38 @@ button:hover{
   color:#ff4d6d;
 }
 
-/* Fade animation */
+/* Dramatic Button */
+button{
+  margin-top:50px;
+  padding:18px 50px;
+  font-size:20px;
+  border:none;
+  border-radius:40px;
+  background:#ff4d6d;
+  color:white;
+  cursor:pointer;
+  transition:0.4s;
+  box-shadow:0 0 20px #ff4d6d;
+}
+
+button:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 40px #ff4d6d;
+}
+
+/* Fade Animation */
 @keyframes fadeIn{
-  from{opacity:0; transform:translateY(20px);}
+  from{opacity:0; transform:translateY(40px);}
   to{opacity:1; transform:translateY(0);}
 }
 
-/* Floating hearts */
+/* Floating Hearts Background */
 .heart{
   position:fixed;
   bottom:-10px;
-  font-size:20px;
+  font-size:22px;
   color:#ff4d6d;
-  animation:floatUp 6s linear infinite;
+  animation:floatUp 7s linear infinite;
 }
 
 @keyframes floatUp{
@@ -80,7 +88,11 @@ button:hover{
 
 <div class="container">
   <h1>Hey My Sellam ❤️</h1>
-  <p>Do you remember the day our <span class="highlight">story</span> began?</p>
+
+  <p>
+    Do you remember the day our 
+    <span class="highlight">story</span> began?
+  </p>
 
   <button onclick="location.href='page2.html'">
     Do You Remember This? 💭
@@ -94,9 +106,9 @@ function createHeart(){
   heart.innerHTML="❤️";
   heart.style.left=Math.random()*100+"vw";
   document.body.appendChild(heart);
-  setTimeout(()=>{heart.remove();},6000);
+  setTimeout(()=>{heart.remove();},7000);
 }
-setInterval(createHeart,500);
+setInterval(createHeart,600);
 </script>
 
 </body>
