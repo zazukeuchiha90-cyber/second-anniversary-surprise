@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy 2 Years ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  background:black;
+  color:white;
+  font-family:'Poppins', sans-serif;
+  overflow:hidden;
+  position:relative;
+}
+
+/* WATERMARK TEXT */
+.watermark{
+  position:fixed;
+  font-family:'Great Vibes', cursive;
+  font-size:120px;
+  color:rgba(255,77,109,0.07);
+  white-space:nowrap;
+  pointer-events:none;
+  animation:moveWatermark 20s linear infinite;
+}
+
+@keyframes moveWatermark{
+  0%{transform:translateX(-100%);}
+  100%{transform:translateX(100%);}
+}
+
+.container{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  z-index:2;
+  position:relative;
+}
+
+h1{
+  font-family:'Great Vibes', cursive;
+  font-size:90px;
+  color:#ff4d6d;
+  text-shadow:0 0 40px #ff4d6d;
+  animation:zoomIn 3s ease-in-out;
+}
+
+@keyframes zoomIn{
+  from{transform:scale(0.8); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+
+#text{
+  margin-top:30px;
+  font-size:22px;
+  line-height:1.7;
+  max-width:80%;
+  white-space:pre-line;
+}
+
+#photo{
+  width:260px;
+  border-radius:20px;
+  margin-top:25px;
+  box-shadow:0 0 30px #ff4d6d;
+  display:none;
+}
+
+button{
+  margin-top:35px;
+  padding:18px 55px;
+  font-size:20px;
+  border:none;
+  border-radius:40px;
+  background:#ff4d6d;
+  color:white;
+  cursor:pointer;
+  transition:0.4s;
+  box-shadow:0 0 20px #ff4d6d;
+  display:none;
+}
+
+button:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 50px #ff4d6d;
+}
+
+/* Floating small love words */
+.loveText{
+  position:fixed;
+  font-family:'Great Vibes', cursive;
+  font-size:40px;
+  color:rgba(255,77,109,0.2);
+  animation:floatLove 15s linear infinite;
+}
+
+@keyframes floatLove{
+  0%{transform:translateY(100vh);}
+  100%{transform:translateY(-100vh);}
+}
+
+/* Floating hearts */
+.heart{
+  position:fixed;
+  bottom:-10px;
+  font-size:22px;
+  color:#ff4d6d;
+  animation:floatUp 7s linear infinite;
+}
+
+@keyframes floatUp{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-100vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="watermark" style="top:20%;">Love You My Kundniiiii ❤️</div>
+<div class="watermark" style="top:60%;">Love You Sellameye ❤️</div>
+
+<div class="container">
+  <h1>Happy 2 Years ❤️</h1>
+
+  <div id="text"></div>
+
+  <img id="photo" src="YOUR_IMAGE_LINK_HERE">
+
+  <button id="foreverBtn" onclick="celebrate()">
+    Will You Stay With Me Forever? 💍
+  </button>
+
+  <audio id="music" src="YOUR_MUSIC_LINK_HERE"></audio>
+</div>
+
+<script>
+
+const message = `Happy 2 Year Anniversary, my Sellam ❤️
+
+From January 19, 2024...
+To February 13, 2024...
+And every single day after that...
+
+We weren't perfect.
+But we were real.
+
+You became my peace.
+My comfort.
+My safe place.
+
+After two years,
+I love you deeper.
+Stronger.
+More certain.
+
+I choose you.
+Today.
+Tomorrow.
+Always. ❤️`;
+
+let i = 0;
+const speed = 35;
+const textDiv = document.getElementById("text");
+
+function typeWriter() {
+  if (i < message.length) {
+    textDiv.innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  } else {
+    document.getElementById("photo").style.display = "block";
+    document.getElementById("foreverBtn").style.display = "inline-block";
+    document.getElementById("music").play();
+  }
+}
+
+typeWriter();
+
+function celebrate(){
+  alert("Forever with you ❤️");
+}
+
+/* Floating hearts */
+function createHeart(){
+  const heart=document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  document.body.appendChild(heart);
+  setTimeout(()=>{heart.remove();},7000);
+}
+setInterval(createHeart,600);
+
+/* Floating small love words */
+function createLoveText(){
+  const love=document.createElement("div");
+  love.classList.add("loveText");
+  love.innerHTML="Love You ❤️";
+  love.style.left=Math.random()*100+"vw";
+  document.body.appendChild(love);
+  setTimeout(()=>{love.remove();},15000);
+}
+setInterval(createLoveText,3000);
+
+</script>
+
+</body>
+  </html>
